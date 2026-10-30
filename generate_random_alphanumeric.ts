@@ -12,10 +12,13 @@ import type { WalnutSharedContext } from "@walnut/agent-sdk";
  * category: Data
  */
 export async function generateRandomAlphanumeric(ctx: WalnutSharedContext): Promise<void> {
-  const rawLength = ctx.args[0];
+  const rawLength = String(ctx.args[0] ?? "").trim();
+  if (!/^\\d+$/.test(rawLength)) {
+    throw new Error("Length must be a whole number from 0 to 100000.");
+  }
   const length = Number(rawLength);
 
-  if (!Number.isSafeInteger(length) || length < 0 || length > 100000) {
+  if (!Number.isSafeInteger(length) || length > 100000) {
     throw new Error("Length must be a whole number from 0 to 100000.");
   }
 
