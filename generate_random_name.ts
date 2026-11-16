@@ -4,9 +4,9 @@ import type { WalnutWebContext } from "@walnut/agent-sdk";
 /**
  * @walnut_method
  * name: Generate Random Name
- * description: Generate a capitalized 8-letter random first name and store it in $[result].
+ * description: Generate a capitalized 8-letter random first name, fill the OrangeHRM First Name field, and store it in $[result].
  * actionType: custom_random_name
- * context: shared
+ * context: web
  * needsLocator: false
  * modules: node:crypto
  * category: Data
