@@ -11,7 +11,7 @@ import type { WalnutSharedContext } from "@walnut/agent-sdk";
  * modules: node:crypto
  * category: Data
  */
-export async function generateRandomName(ctx: WalnutWebContext): Promise<void> {
+export async function generateRandomName(ctx: WalnutSharedContext): Promise<void> {
   const lowercase = "abcdefghijklmnopqrstuvwxyz";
   const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let result = uppercase[randomInt(uppercase.length)];
