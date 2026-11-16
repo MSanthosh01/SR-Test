@@ -1,5 +1,5 @@
 import { randomInt } from "node:crypto";
-import type { WalnutWebContext } from "@walnut/agent-sdk";
+import type { WalnutSharedContext } from "@walnut/agent-sdk";
 
 /**
  * @walnut_method
