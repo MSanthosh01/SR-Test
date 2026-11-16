@@ -18,5 +18,6 @@ export async function generateRandomName(ctx: WalnutWebContext): Promise<void> {
   for (let i = 1; i < 8; i += 1) {
     result += lowercase[randomInt(lowercase.length)];
   }
+  await ctx.page.getByRole("textbox", { name: "First Name" }).fill(result);
   ctx.setVariable("result", result);
 }
